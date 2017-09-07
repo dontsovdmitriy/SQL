@@ -180,7 +180,8 @@ WHERE p.p_parent IS NULL;
 SELECT  b.b_id, b.b_url, count( m2m.b_id) AS `COUNT`
 FROM m2m_banners_pages m2m
 JOIN   banners b ON b.b_id = m2m.b_id
-GROUP BY m2m.b_id
+GROUP BY m2m.b_id 
+ORDER BY `COUNT` DESC
 LIMIT 1;
 30)
 SELECT p.p_name, COUNT(m2m.p_id) AS COUNT
